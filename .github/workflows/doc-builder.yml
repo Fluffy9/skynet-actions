@@ -12,6 +12,6 @@ jobs:
         run: git clone https://github.com/SkynetLabs/skynet-docs/
       - name: Merge
         run: |
-          mkdir ${{ env.home }}/source/
-          mv ${{ env.home }}/skyd/doc ${{ env.home }}/source
-          mv ${{ env.home }}/skynet-docs/source
+          mkdir source
+          mv ${{ env.home }}/skyd/doc ./source
+          mv ${{ env.home }}/skynet-docs/source ./source
