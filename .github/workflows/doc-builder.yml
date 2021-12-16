@@ -13,5 +13,5 @@ jobs:
       - name: Merge
         run: |
           mkdir source
-          mv ${{ env.home }}/skyd/doc ./source
-          mv ${{ env.home }}/skynet-docs/source ./source
+          mv ./skyd/doc ./source
+          mv ./skynet-docs/source ./source
