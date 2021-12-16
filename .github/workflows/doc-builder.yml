@@ -21,7 +21,6 @@ jobs:
         with:
           node-version: '14'
       - name: Node Slate Builder
-        working-directory: ./whiteboard/source
         run: |
           npm install
           npm run-script generate
