@@ -25,7 +25,6 @@ jobs:
     - name: Node Slate Builder
       working-directory: ./source
       run: |
-        npm init --yes
         npm install --save-dev gulp gulp-node-slate
         f=https://raw.githubusercontent.com/center-key/gulp-node-slate/main/gulpfile.js
         curl --remote-name $f
