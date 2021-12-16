@@ -26,7 +26,8 @@ jobs:
           npm install
           npm run-script generate
       - name: Fix Weird index.html
-        run: mv ./public/index.html.html ./public/index.html
+        working-directory: ./whiteboard/public
+        run: mv ./index.html.html ./index.html
       - name: Deploy to Skynet
         uses: SkynetLabs/deploy-to-skynet-action@v2
         with:
