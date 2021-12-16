@@ -15,8 +15,8 @@ jobs:
       - name: Merge
         run: |
           rm -r ./whiteboard/source/*
-          mv ./skyd/doc ./whiteboard/source
-          mv ./skynet-docs/source ./whiteboard/source 
+          mv ./skyd/doc/* ./whiteboard/source
+          mv ./skynet-docs/source/* ./whiteboard/source 
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
