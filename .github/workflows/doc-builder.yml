@@ -24,6 +24,7 @@ jobs:
         working-directory: ./whiteboard/source
         run: |
           npm install
+          npm audit fix --force
           npm run-script generate
       - name: Deploy to Skynet
         uses: SkynetLabs/deploy-to-skynet-action@v2
