@@ -7,11 +7,11 @@ jobs:
     runs-on: "ubuntu-latest"
     steps: 
       - name: Retrieve Skyd Docs
-      run: git clone https://gitlab.com/SkynetLabs/skyd/
+        run: git clone https://gitlab.com/SkynetLabs/skyd/
       - name: Retrieve Skynet Docs
-      run: git clone https://github.com/SkynetLabs/skynet-docs/
+        run: git clone https://github.com/SkynetLabs/skynet-docs/
       - name: Merge
-      run: |
-        mkdir ${{ env.home }}/source/
-        mv ${{ env.home }}/skyd/doc ${{ env.home }}/source
-        mv ${{ env.home }}/skynet-docs/source
+        run: |
+          mkdir ${{ env.home }}/source/
+          mv ${{ env.home }}/skyd/doc ${{ env.home }}/source
+          mv ${{ env.home }}/skynet-docs/source
