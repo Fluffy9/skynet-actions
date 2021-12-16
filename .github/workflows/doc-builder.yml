@@ -19,12 +19,11 @@ jobs:
           mv ./skynet-docs/source/* ./whiteboard/source 
       - uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '12.18'
       - name: Node Slate Builder
         working-directory: ./whiteboard/source
         run: |
           npm install
-          npm audit fix --force
           npm run-script generate
       - name: Deploy to Skynet
         uses: SkynetLabs/deploy-to-skynet-action@v2
