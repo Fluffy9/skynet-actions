@@ -14,11 +14,8 @@ jobs:
         run: git clone https://github.com/center-key/node-slate
       - name: Merge
         run: |
-          mv ./node-slate/source/index.yml ./node-slate
-          rm -r ./node-slate/source/*
           mv ./skyd/doc/* ./node-slate/source
           mv ./skynet-docs/source/* ./node-slate/source 
-          mv ./node-slate/index.yml ./node-slate/source
       - uses: actions/setup-node@v2
         with:
           node-version: '12.18'
