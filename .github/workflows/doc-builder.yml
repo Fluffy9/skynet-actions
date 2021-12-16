@@ -10,28 +10,28 @@ jobs:
         run: git clone https://gitlab.com/SkynetLabs/skyd/
       - name: Retrieve Skynet Docs
         run: git clone https://github.com/SkynetLabs/skynet-docs/
-      - name: Install Whiteboard Tool
-        run: git clone https://github.com/mpociot/whiteboard.git
+      - name: Install Node Slate Tool
+        run: git clone https://github.com/center-key/node-slate
       - name: Merge
         run: |
-          rm -r ./whiteboard/source/*
-          mv ./skyd/doc/* ./whiteboard/source
-          mv ./skynet-docs/source/* ./whiteboard/source 
+          rm -r ./node-slate/source/*
+          mv ./skyd/doc/* ./node-slate/source
+          mv ./skynet-docs/source/* ./node-slate/source 
       - uses: actions/setup-node@v2
         with:
           node-version: '12.18'
       - name: Node Slate Builder
-        working-directory: ./whiteboard/source
+        working-directory: ./node-slate/source
         run: |
           npm install
           npm run-script generate
       - name: Fix Weird index.html
-        working-directory: ./whiteboard/public
+        working-directory: ./node-slate/public
         run: mv ./index.html.html ./index.html
       - name: Deploy to Skynet
         uses: SkynetLabs/deploy-to-skynet-action@v2
         with:
-          upload-dir: ./whiteboard/public
+          upload-dir: ./node-slate/public
           github-token: ${{ secrets.GITHUB_TOKEN }}
           registry-seed: ${{ secrets.REGISTRY_SEED || '' }}
           registry-datakey: ${{ secrets.REGISTRY_DATAKEY || '' }}
