@@ -10,23 +10,21 @@ jobs:
         run: git clone https://gitlab.com/SkynetLabs/skyd/
       - name: Retrieve Skynet Docs
         run: git clone https://github.com/SkynetLabs/skynet-docs/
+      - name: Install Whiteboard Tool
+        run: git clone https://github.com/mpociot/whiteboard.git
       - name: Merge
         run: |
-          mkdir source
-          mv ./skyd/doc ./source
-          mv ./skynet-docs/source ./source 
+          rm -r ./whiteboard/source/*
+          mv ./skyd/doc ./whiteboard/source
+          mv ./skynet-docs/source ./whiteboard/source 
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
       - name: Node Slate Builder
-        working-directory: ./source
+        working-directory: ./whiteboard/source
         run: |
-          npm init --yes
-          npm install --save-dev gulp gulp-node-slate
-          f=https://raw.githubusercontent.com/center-key/gulp-node-slate/main/gulpfile.js
-          curl --remote-name $f
-          cat gulpfile.js
-          node node_modules/gulp/bin/gulp.js slate
+          npm install
+          npm run-script generate
 
 
 
