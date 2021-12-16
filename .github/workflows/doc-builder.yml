@@ -28,7 +28,7 @@ jobs:
       - name: Deploy to Skynet
         uses: SkynetLabs/deploy-to-skynet-action@v2
         with:
-          upload-dir: ./whiteboard/source
+          upload-dir: ./whiteboard/public
           github-token: ${{ secrets.GITHUB_TOKEN }}
           registry-seed: ${{ secrets.REGISTRY_SEED || '' }}
           registry-datakey: ${{ secrets.REGISTRY_DATAKEY || '' }}
