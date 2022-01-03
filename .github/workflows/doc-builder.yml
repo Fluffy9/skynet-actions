@@ -11,7 +11,7 @@ jobs:
       - name: Retrieve Skynet Docs
         run: git clone https://github.com/SkynetLabs/skynet-docs/
       - name: Install Node Slate Tool
-        run: git clone https://github.com/center-key/node-slate
+        run: git clone https://github.com/Fluffy9/node-slate
       - name: Merge
         run: |
           cp -rlf ./skyd/doc/* ./node-slate/source
