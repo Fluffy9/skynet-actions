@@ -17,8 +17,8 @@ jobs:
           node-version: '14'
       - name: Merge
         run: |
-          cp -rlf ./skyd/doc/* ./node-slate/source
-          cp -rlf ./skynet-docs/source/* ./node-slate/source 
+          rsync -a ./skyd/doc/* ./node-slate/source
+          rsync -a ./skynet-docs/source/* ./node-slate/source
       - name: Node Slate Builder
         working-directory: ./node-slate
         run: |
