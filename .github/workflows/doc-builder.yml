@@ -15,8 +15,12 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '12.18'
+      - name: Merge
+        run: |
+          cp -rlf ./skyd/doc/* ./node-slate/source
+          cp -rlf ./skynet-docs/source/* ./node-slate/source 
       - name: Node Slate Builder
-        working-directory: ./node-slate/source
+        working-directory: ./node-slate
         run: |
           npm install
           npm run build
