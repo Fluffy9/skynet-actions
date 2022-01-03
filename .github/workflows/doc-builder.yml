@@ -24,9 +24,6 @@ jobs:
         run: |
           npm install
           npm run build
-      - name: Fix Weird index.html
-        working-directory: ./node-slate/public
-        run: mv ./index.html.html ./index.html
       - name: Deploy to Skynet
         uses: SkynetLabs/deploy-to-skynet-action@v2
         with:
