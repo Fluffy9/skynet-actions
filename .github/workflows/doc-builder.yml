@@ -17,9 +17,6 @@ jobs:
           node-version: '14'
       - name: Merge
         run: |
-          mv ./node-slate/source/main.md ./skyd/doc/main.md
-          mv ./node-slate/source/index.yml ./skyd/doc/index.yml 
-          rm -r node-slate/source/*
           rsync -a ./skyd/doc/* ./node-slate/source
           rsync -a ./skynet-docs/source/* ./node-slate/source
       - name: Node Slate Builder
@@ -34,6 +31,3 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           registry-seed: ${{ secrets.REGISTRY_SEED || '' }}
           registry-datakey: ${{ secrets.REGISTRY_DATAKEY || '' }}
-
-
-
