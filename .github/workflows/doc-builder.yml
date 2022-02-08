@@ -17,8 +17,8 @@ jobs:
           node-version: '14'
       - name: Merge
         run: |
-          rsync -a ./skyd/doc/* ./node-slate/docs
-          rsync -a ./skynet-docs/source/* ./node-slate/docs
+          rsync -a ./skyd/doc/* ./node-slate/source
+          rsync -a ./skynet-docs/source/* ./node-slate/source
       - name: Node Slate Builder
         working-directory: ./node-slate
         run: |
