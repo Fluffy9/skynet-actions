@@ -18,8 +18,8 @@ jobs:
       - name: Merge
         run: |
           mkdir ./node-slate/includes
-          rsync -avi ./skyd/doc/* ./node-slate/includes
-          rsync -avi ./skynet-docs/source/* ./node-slate/includes
+          rsync -avi ./skyd/doc/* ./node-slate/source/includes
+          rsync -avi ./skynet-docs/source/* ./node-slate/source/includes
       - name: Node Slate Builder
         working-directory: ./node-slate
         run: |
