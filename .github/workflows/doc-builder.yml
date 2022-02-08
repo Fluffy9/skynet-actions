@@ -17,8 +17,9 @@ jobs:
           node-version: '14'
       - name: Merge
         run: |
-          rsync -avi ./skyd/doc/* ./node-slate/source
-          rsync -avi ./skynet-docs/source/* ./node-slate/source
+          mkdir ./node-slate/includes
+          rsync -avi ./skyd/doc/* ./node-slate/includes
+          rsync -avi ./skynet-docs/source/* ./node-slate/includes
       - name: Node Slate Builder
         working-directory: ./node-slate
         run: |
@@ -27,7 +28,7 @@ jobs:
       - name: Deploy to Skynet
         uses: SkynetLabs/deploy-to-skynet-action@v2
         with:
-          upload-dir: ./node-slate/source
+          upload-dir: ./node-slate/build
           github-token: ${{ secrets.GITHUB_TOKEN }}
           registry-seed: ${{ secrets.REGISTRY_SEED || '' }}
           registry-datakey: ${{ secrets.REGISTRY_DATAKEY || '' }}
