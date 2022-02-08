@@ -17,6 +17,7 @@ jobs:
           node-version: '14'
       - name: Merge
         run: |
+          mv ./node-slate/source/includes/main.md ./skyd/doc/includes/main.md
           mv ./node-slate/source/index.yml ./skyd/doc/index.yml 
           rm -r node-slate/source/*
           rsync -a ./skyd/doc/* ./node-slate/source
