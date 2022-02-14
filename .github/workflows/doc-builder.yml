@@ -10,7 +10,6 @@ jobs:
         run: git clone https://gitlab.com/SkynetLabs/skyd/
       - name: Retrieve Skynet Docs
         run: git clone https://github.com/SkynetLabs/skynet-docs/
-      - name: Install Node Slate Tool
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
